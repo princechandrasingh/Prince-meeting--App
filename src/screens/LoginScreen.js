@@ -3,11 +3,12 @@ import { View, Button, Text } from "react-native";
 import * as Google from "expo-auth-session/providers/google";
 import { auth } from "../services/firebase";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
+require('dotenv').config();
 
 export default function LoginScreen({ navigation }) {
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: "Y540447516168-t9bsb10ci29a1a5kt4n9roouoaa0n898.apps.googleusercontent.com",
-    androidClientId: "540447516168-0ld0qtqigspvu477fdj98op0tbsmmsgf.apps.googleusercontent.com",
+    expoClientId: "",
+    androidClientId: "",
     //iosClientId: "YOUR_IOS_CLIENT_ID.apps.googleusercontent.com",
     scopes: ["openid", "profile", "email", "https://www.googleapis.com/auth/calendar"],
   });
